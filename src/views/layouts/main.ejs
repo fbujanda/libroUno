@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="/src/assets/images/favicon.png" rel="icon" />
+<title>Sistemas Coordenados y Álgebra Vectorial</title>
+<meta name="description" content="Libro-Vectoras-Contenido-Matemático-En-Web">
+<meta name="author" content="fidiasBujandaAgudo">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+
+<!-- Math latex rendering
+============================== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<!-- <div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div> -->
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+      <div class="container-fluid">
+        
+        <!-- Sidebar Toggler -->
+		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+		
+		<!-- Logo --> 
+        <a class="logo ml-md-3" href="#" title="febafebril Template"> <img src="assets/images/logoreducido.png" alt="iDocs Template"/> </a> 
+		<span class="text-2 ml-2">v1.0</span> 
+        <!-- Logo End -->
+        
+		<!-- Navbar Toggler -->
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+    
+		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+      <a class="navbar-brand ml-auto" href="#">@febafebril Math</a>
+      <ul class="navbar-nav ml-auto">
+        <%if(user) {%>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/logout">Logout</a>
+          </li>
+          <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">SignIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/signup">SignUp</a>
+        </li>
+        <% } %>
+      </ul>
+        </div>
+        <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+          <li class="social-icons-twitter"><a data-toggle="tooltip" href="https://twitter.com/febafebril" target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <!-- <li><a data-toggle="tooltip" href="http://www.youtube.com/" target="_blank" title="" data-original-title="Youtube"><i class="fab fa-youtube"></i></a></li> -->
+          <li class="social-icons-youtube"><a data-toggle="tooltip" href="https://www.youtube.com/@fidiasbujanda9797" target="_blank" title="" data-original-title="Youtube"><i class="fab fa-youtube"></i></a></li>
+          <li class="social-icons-dribbble"><a data-toggle="tooltip" href="https://t.me/+zHndRKdmIMFlYjMx" target="_blank" title="" data-original-title="Telegram"><i class="fab fa-telegram"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar End --> 
+  </header>
+  <!-- *************** -->
+  
+  <body> 
+    <div class=" container">
+      <%  if (signUpMssg.length > 0) { %>
+          <div class="alert alert-danger"><%= signUpMssg %> </div>
+      <%  }  %>
+  
+      <%  if (signInMssg.length > 0) { %> 
+          <div class="alert alert-danger"><%= signInMssg %> </div>
+      <%  }  %>
+  
+      <%- body  %>
+  </div>
+    
+
+
+  
+</body>
+<!-- </body> -->
+</html>
