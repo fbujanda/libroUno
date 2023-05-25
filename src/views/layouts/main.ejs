@@ -12,7 +12,8 @@
 <!-- Stylesheet
 ============================== -->
 <!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" /> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <!-- Font Awesome Icon -->
 <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
 <!-- Magnific Popup -->
@@ -28,6 +29,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>  
 </head>
 
 <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
@@ -59,16 +61,20 @@
 		
 		<!-- Logo --> 
         <a class="logo ml-md-3" href="#" title="febafebril Template"> <img src="assets/images/logoreducido.png" alt="iDocs Template"/> </a> 
+        
 		<span class="text-2 ml-2">v1.0</span> 
         <!-- Logo End -->
         
 		<!-- Navbar Toggler -->
-		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+		<button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"
+    aria-controls="header-nav"><span></span><span></span><span></span></button>
+    <div class="col ml-auto text-center" >    <a class="navbar-brand ml-4 justify-content-auto" href="#">Sistemas Coordenados y Álgebra Vectorial</a>
+    </div>
     
 		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
-      <a class="navbar-brand ml-auto" href="#">@febafebril Math</a>
+      
       <ul class="navbar-nav ml-auto">
-        <%if(user) {%>
+        <%if(user && user.autorizado) {%>
           <li class="nav-item">
             <a class="nav-link" href="/profile">Inicio</a>
           </li>
@@ -84,14 +90,13 @@
         </li>
         <% } %>
       </ul>
-        </div>
+    </div>
         <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
           <li class="social-icons-twitter"><a data-toggle="tooltip" href="https://twitter.com/febafebril" target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
           <!-- <li><a data-toggle="tooltip" href="http://www.youtube.com/" target="_blank" title="" data-original-title="Youtube"><i class="fab fa-youtube"></i></a></li> -->
           <li class="social-icons-youtube"><a data-toggle="tooltip" href="https://www.youtube.com/@fidiasbujanda9797" target="_blank" title="" data-original-title="Youtube"><i class="fab fa-youtube"></i></a></li>
           <li class="social-icons-dribbble"><a data-toggle="tooltip" href="https://t.me/+zHndRKdmIMFlYjMx" target="_blank" title="" data-original-title="Telegram"><i class="fab fa-telegram"></i></a></li>
         </ul>
-      </div>
     </nav>
     <!-- Navbar End --> 
   </header>
@@ -106,12 +111,12 @@
       <%  if (signInMssg.length > 0) { %> 
           <div class="alert alert-danger"><%= signInMssg %> </div>
       <%  }  %>
-  
+    </div>
       <%- body  %>
-  </div>
-    
 
 
+
+  
   
 </body>
 <!-- </body> -->

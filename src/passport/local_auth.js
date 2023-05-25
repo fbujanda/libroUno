@@ -34,7 +34,7 @@ passport.use(
         newUser.password = newUser.encryptPassword(password);
         newUser.autorizado = false;
         await newUser.save();
-        done(null, newUser);
+        done(null, newUser, req.flash("signUpMssg", "Comuniquese con autor"));
       }
     }
   )

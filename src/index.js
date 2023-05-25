@@ -45,6 +45,7 @@ app.use("/", require("./routes/index.js"));
 // Express static
 app.use(express.static(path.join(__dirname, "public")));
 // Variables de entorno para heroku
+// const host = process.env.HOST || "0.0.0.0";
 const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 3000;
 // Initializing the server

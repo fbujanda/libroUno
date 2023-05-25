@@ -14,7 +14,7 @@ route.get("/signup", (req, res, next) => {
 route.post(
   "/signup",
   passport.authenticate("local-signup", {
-    successRedirect: "/profile",
+    successRedirect: "/signin", //profile
     failureRedirect: "/signup",
     passReqToCallback: true,
   })
